@@ -14,13 +14,32 @@ for (let i = 0; i < images.length; i++) {
 const item = document.querySelector('.item');
 item.classList.add('show');
 
+// Creation of a function capable of add or remove the .show class according to the actual active image;
+const topArrow = document.querySelector('.arrow.top');
+const bottomArrow = document.querySelector('.arrow.bottom');
+const items = document.querySelectorAll('.item');
 
+// - The variable active sets a maximum number of clicks on the arrows (given by the number of the images)
+let active = 0;
 
+bottomArrow.addEventListener('click',
+    function() {
+        if (active < images.length - 1) {
+            items[active].classList.remove('show');
+            active++;
+            items[active].classList.add('show');
+        }
+    })
 
-// - In order to transform the carousel in a full dynamic one, we need to create two variables for the markup arrows;
-// - Using an `EventListener`, we can then create a function capable of changing the visible image after a mouse click on the arrows;
-// - In order to do so, we need to work on a new variable, `active`, able to set a maximum number of clicks on the arrows (given by the number of the images);
-// - We then need to create a function capable of add or remove the `.show` class according to the actual active image;
+topArrow.addEventListener('click',
+    function() {
+        if (active > 0) {
+            items[active].classList.remove('show');
+            active--;
+            items[active].classList.add('show');
+        }
+    })
+
 
 // ## Bonus 1
 
