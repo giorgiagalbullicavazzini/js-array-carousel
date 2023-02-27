@@ -19,35 +19,39 @@ const topArrow = document.querySelector('.arrow.top');
 const bottomArrow = document.querySelector('.arrow.bottom');
 const items = document.querySelectorAll('.item');
 
-// - The variable active sets a maximum number of clicks on the arrows (given by the number of the images)
+// The variable active sets a maximum number of clicks on the arrows (given by the number of the images)
 let active = 0;
 
 bottomArrow.addEventListener('click',
     function() {
-        if (active < images.length - 1) {
-            items[active].classList.remove('show');
+        items[active].classList.remove('show');
+
+        // IF this is the last possible click, the index value returns to 0
+        if (active === images.length - 1) {
+            active = 0;
+        } else {
             active++;
-            items[active].classList.add('show');
         }
+
+        items[active].classList.add('show');
     })
 
 topArrow.addEventListener('click',
     function() {
-        if (active > 0) {
-            items[active].classList.remove('show');
+        items[active].classList.remove('show');
+
+        // IF this is the last possible click, the index value returns to the maximum index number
+        if (active === 0) {
+            active = images.length - 1;
+        } else {
             active--;
-            items[active].classList.add('show');
         }
+
+        items[active].classList.add('show');
     })
 
 
-// ## Bonus 1
 
-// - Working on the final project, we can then transform the given result in an infinite loop;
-// - To do so, we need to modify our function in order to change the previous behaviour of the arrows;
-// - With this edit, we will then be able to click on them limitless;
-// - In order to do so, we can add a simple instruction to the `EventListener`;
-// - IF this is the last possible click, the index value returns to 0 (next arrow) or to the maximum index number (previous arrow);
 
 // ## Bonus 2
 
