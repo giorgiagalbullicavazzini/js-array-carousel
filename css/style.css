@@ -61,6 +61,11 @@ body {
     display: block;
 }
 
+.thumbnails .thumbnail {
+    height: 3.75rem;
+    width: 9.375rem;
+}
+
 img {
     display: block;
     height: 100%;

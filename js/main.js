@@ -53,9 +53,7 @@ topArrow.addEventListener('click',
 
 
 
-// ## Bonus 2
 
-// - To complete our project, we can now add some HTML graphic elements: the thumbnails of our images;
 // - By CSS, the thumbnails will be covered by a dark layer, except the one corresponding to the active image;
 // - This special one will have a border color;
 // - In order to transform this final part in a dynamic one, we can now add to the `EventListener` the ability to change the thumbnails style with a class according to the actual active image, just like we did with the `.show` class.
