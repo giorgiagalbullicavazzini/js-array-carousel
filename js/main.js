@@ -1,15 +1,21 @@
-// - The static markup will be made of a container, a single image and two arrows;
+'use strict';
 
-// ## Milestone 2
+// Creation of an array containing all the images
+const images = ['01', '02', '03', '04', '05'];
 
-// - We can now work on the static markup to transform it in a dynamic one;
-// - For the purpose, we can create an array, containing all the images;
-// - Using a `for` loop, we can then create a literal template capable of rotate between the different images dynamically;
-// - All the images, except the first one, will be hidden with a `display: none`;
-// - The first one will be visible thanks to a `.show` class;
-// - The final result will be the same of the one of the first milestone, but this one will be completely built using JavaScript and it will be able to become dynamic during the third and last milestone;
+// Creation of a loop able to rotate between the different images dynamically
+const slider = document.querySelector('.slider');
 
-// ## Milestone 3
+for (let i = 0; i < images.length; i++) {
+    slider.innerHTML += `<div class="item"><img src="img/${images[i]}.webp" alt="Videogame"></div>`
+}
+
+// The first image will be visible thanks to a .show class;
+const item = document.querySelector('.item');
+item.classList.add('show');
+
+
+
 
 // - In order to transform the carousel in a full dynamic one, we need to create two variables for the markup arrows;
 // - Using an `EventListener`, we can then create a function capable of changing the visible image after a mouse click on the arrows;

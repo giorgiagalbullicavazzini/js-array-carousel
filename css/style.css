@@ -52,8 +52,13 @@ body {
 
 .item {
     background-color: #ffffff;
+    display: none;
     height: 18.75rem;
     width: 43.75rem;
+}
+
+.show {
+    display: block;
 }
 
 img {
