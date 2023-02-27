@@ -14,10 +14,15 @@ for (let i = 0; i < images.length; i++) {
 const item = document.querySelector('.item');
 item.classList.add('show');
 
+// By CSS, the thumbnails will be covered by a dark layer, except the one corresponding to the active image
+const thumbnail = document.querySelector('.thumbnail');
+thumbnail.classList.add('selected');
+
 // Creation of a function capable of add or remove the .show class according to the actual active image;
 const topArrow = document.querySelector('.arrow.top');
 const bottomArrow = document.querySelector('.arrow.bottom');
 const items = document.querySelectorAll('.item');
+const thumbnails = document.querySelectorAll('.thumbnail');
 
 // The variable active sets a maximum number of clicks on the arrows (given by the number of the images)
 let active = 0;
@@ -25,6 +30,7 @@ let active = 0;
 bottomArrow.addEventListener('click',
     function() {
         items[active].classList.remove('show');
+        thumbnails[active].classList.remove('selected');
 
         // IF this is the last possible click, the index value returns to 0
         if (active === images.length - 1) {
@@ -34,11 +40,13 @@ bottomArrow.addEventListener('click',
         }
 
         items[active].classList.add('show');
+        thumbnails[active].classList.add('selected');
     })
 
 topArrow.addEventListener('click',
     function() {
         items[active].classList.remove('show');
+        thumbnails[active].classList.remove('selected');
 
         // IF this is the last possible click, the index value returns to the maximum index number
         if (active === 0) {
@@ -48,12 +56,5 @@ topArrow.addEventListener('click',
         }
 
         items[active].classList.add('show');
+        thumbnails[active].classList.add('selected');
     })
-
-
-
-
-
-// - By CSS, the thumbnails will be covered by a dark layer, except the one corresponding to the active image;
-// - This special one will have a border color;
-// - In order to transform this final part in a dynamic one, we can now add to the `EventListener` the ability to change the thumbnails style with a class according to the actual active image, just like we did with the `.show` class.

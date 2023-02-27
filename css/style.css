@@ -15,11 +15,6 @@ Reset
 Common
 =============
 */
-
-body {
-    background-color: lightblue;
-}
-
 .container {
     align-items: center;
     display: flex;
@@ -27,28 +22,18 @@ body {
     justify-content: center;
 }
 
-.slider {
-    position: relative;
+img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
 }
 
-.arrow {
-    background-color: #cccccc;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.25rem;
-    left: 50%;
-    padding: 2px 5px;
-    position: absolute;
-    transform: translate(-50%);
-}
-
-.arrow.top {
-    top: .625rem;
-}
-
-.arrow.bottom {
-    bottom: .625rem;
-}
+/*
+=============
+Carousel images
+=============
+*/
 
 .item {
     background-color: #ffffff;
@@ -61,14 +46,52 @@ body {
     display: block;
 }
 
+/*
+=============
+Arrows
+=============
+*/
+
+.thumbnails {
+    position: relative;
+}
+
+.arrow {
+    background-color: #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.125rem;
+    left: 50%;
+    padding: 1px 4px;
+    position: absolute;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+
+.arrow.top {
+    top: .625rem;
+}
+
+.arrow.bottom {
+    bottom: .625rem;
+}
+
+/*
+=============
+Thumbnails
+=============
+*/
+
 .thumbnails .thumbnail {
     height: 3.75rem;
     width: 9.375rem;
 }
 
-img {
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+.thumbnails img {
+    filter: brightness(0.4);
+}
+
+.thumbnails .selected {
+    border: 2px solid #cccccc;
+    filter: brightness(250%);
 }
